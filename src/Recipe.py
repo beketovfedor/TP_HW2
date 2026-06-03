@@ -1,3 +1,5 @@
+from src.Ingredient import Ingredient
+
 class Recipe:
     def __init__(self, title, ingredients):
         self.title = title
@@ -15,14 +17,15 @@ class Recipe:
     def is_valid_ratio(ratio):
         return isinstance(ratio, (int, float)) and ratio > 0
     
-    def scale(ratio: float):
-        newRecipe = Recipe(self.title, self.ingredients.copy())
-        for element in newRecipe.ingredients:
-            element.quantity *= ratio
-        return newRecipe
+    def scale(self, ratio: float):
+        if not self.is_valid_ratio(ratio):
+            raise ValueError("Коэффициент масштабирования должен быть положительным числом")
+        scaled_ingredients = [Ingredient(ing.name, ing.quantity * ratio, ing.unit) for ing in self.ingredients]
+        return Recipe(self.title, scaled_ingredients)
     def __len__(self):
         return len(self.ingredients)
     def __str__(self):
-        print(f" ❦{self.title}❦")
+        txt =(f" ❦{self.title}❦")
         for element in self.ingredients:
-            print(f"❧ {element}")
+            txt += f"\n❧ {element}"
+        return txt
