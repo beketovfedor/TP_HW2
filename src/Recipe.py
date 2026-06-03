@@ -23,6 +23,6 @@ class Recipe:
     def __len__(self):
         return len(self.ingredients)
     def __str__(self):
-        print(f"    ❦{self.title}❦")
+        print(f" ❦{self.title}❦")
         for element in self.ingredients:
             print(f"❧ {element}")
