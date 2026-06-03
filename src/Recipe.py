@@ -3,7 +3,7 @@ class Recipe:
         self.title = title
         self.ingredients = ingredients
     
-    def add_ingredient(self, ingredient : Ingredient):
+    def add_ingredient(self, ingredient: Ingredient):
         for element in self.ingredients:
             if element == ingredient:
                 element.quantity += ingredient.quantity
