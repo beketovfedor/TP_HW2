@@ -6,7 +6,7 @@ _Система для управления рецептами_
    в терминале на своем компьютере последовательно введите следущие команды, чтобы запустить проект:
      git clone https://github.com/beketovfedor/TP_HW2.git
      cd TP_HW2
-     pip install -r requirements.txt
+     pip install -r requirements.txt (сначала добавьте Python в PATH чтобы сработало)
      pytest
 
 Структура проекта:
